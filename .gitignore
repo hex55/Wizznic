@@ -8,6 +8,7 @@ wizznic.layout
 wizznic-wiz
 wizznic.layout.cbTemp
 wizznic.exe
+wizznic.elf
 Debug/
 bundler/
 dlc/
