@@ -359,6 +359,7 @@ void statsSaveHighScore()
     if(p>10)
     {
       it=listRemoveItem(st.packHsTable,it, LIST_PREV);
+	  it = &st.packHsTable->begin;
     }
   }
 

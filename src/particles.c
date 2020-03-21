@@ -197,6 +197,7 @@ void runParticlesLayer(SDL_Surface* screen, int layer)
         clearSystem(p);
         //Remove from list. (removeItem returns the item just before current, if any)
         it=listRemoveItem(pSystems, it, LIST_PREV);
+		it = &pSystems->begin;
       }
     } //System is on correct layer
   }
@@ -220,6 +221,7 @@ void clearParticles()
   {
     clearSystem( (pSystem_t*)it->data );
     it=listRemoveItem(pSystems, it, LIST_PREV);
+	it = &pSystems->begin;
   }
 }
 

@@ -39,6 +39,7 @@ int switchSetTargets( playField* pf )
       printf("Switch error: List tells there is a switch at %i,%i but that is not the case.\n", sw->sx, sw->sy);
       free(sw);
       listRemoveItem(pf->levelInfo->switchList, it, LIST_PREV );
+	  it = &pf->levelInfo->switchList->begin;
       continue;
     }
 
@@ -48,6 +49,7 @@ int switchSetTargets( playField* pf )
       printf("Switch error: Switch at %i,%i points at %i,%i but that's not a valid target brick.\n", sw->sx, sw->sy, sw->dx, sw->dy);
       free(sw);
       listRemoveItem(pf->levelInfo->switchList, it, LIST_PREV );
+	  it = &pf->levelInfo->switchList->begin;
       continue;
     }
 
@@ -229,6 +231,7 @@ void switchPutBack(playField* pf)
         pf->board[b->dx][b->dy]=b;
         boardSetWalls(pf);
         it=listRemoveItem(pf->deactivated,it, LIST_PREV);
+		it = &pf->deactivated->begin;
       }
     }
   }

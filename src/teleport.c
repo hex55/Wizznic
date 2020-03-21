@@ -76,6 +76,7 @@ void teleRemoveFromList( list_t* l, int sx, int sy )
     if(t->sx==sx && t->sy==sy)
     {
       listRemoveItem(l, it, LIST_NEXT);
+	  it = &l->begin;
       break;
     }
   }
