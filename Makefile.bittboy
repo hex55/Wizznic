@@ -39,7 +39,7 @@ else
 endif
 
 LDFLAGS=$(CFLAGS)
-LIBS = -lSDL_image -lSDL_mixer $(shell $(SYSROOT)/usr/bin/sdl-config --libs) -ljpeg -lpng -lz -lvorbisfile -lvorbis -logg
+LIBS = $(shell /opt/miyoo/bin/pkg-config --libs sdl SDL_image SDL_ttf SDL_mixer) -ljpeg -lpng -lz -logg
 
 #Are we compiling with gl?
 ifneq ($(WITH_OPENGL),false)
